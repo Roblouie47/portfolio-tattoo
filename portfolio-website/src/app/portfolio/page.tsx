@@ -59,3 +59,4 @@ export default function Portfolio() {
     </motion.div>
   );
 }
+"use client";
