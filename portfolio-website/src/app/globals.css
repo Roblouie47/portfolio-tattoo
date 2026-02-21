@@ -1,0 +1,58 @@
+
+/* Navigation link focus/lock animation */
+.nav-link {
+  position: relative;
+  color: #222;
+  transition: color 0.2s;
+}
+.nav-link:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #6366f1 0%, #a21caf 100%);
+  opacity: 0;
+  transform: scaleX(0);
+  transition: opacity 0.2s, transform 0.3s;
+}
+.nav-link:hover,
+.nav-link:focus,
+.nav-link.active {
+  color: #a21caf;
+}
+.nav-link:hover:after,
+.nav-link:focus:after,
+.nav-link.active:after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --text-main: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --text-main: #ededed;
+  }
+}
+
+body {
+  background: linear-gradient(135deg, #7a696c 20%, #e3eeff 100%);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}

@@ -1,0 +1,27 @@
+/* Portfolio horizontal scroll and snap styles */
+
+.portfolioSection {
+  overflow-x: auto;
+  width: 100vw;
+  background: #fff;
+  padding: 0;
+  margin: 0;
+}
+
+.portfolioContainer {
+  display: flex;
+  width: max-content;
+  height: 100%;
+  scroll-snap-type: x mandatory;
+}
+
+.portfolioContainer img {
+  flex: 0 0 100vw;
+  height: 110vh;
+  object-fit: contain;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;
+}
